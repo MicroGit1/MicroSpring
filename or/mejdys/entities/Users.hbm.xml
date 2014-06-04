@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 4, 2014 1:08:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="or.mejdys.entities.Users" table="Users" catalog="microspringdb">
+        <id name="userId" type="int">
+            <column name="UserId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="roles" class="or.mejdys.entities.Roles" fetch="select">
+            <column name="RoleId" not-null="true" />
+        </many-to-one>
+        <property name="login" type="string">
+            <column name="Login" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
